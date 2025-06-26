@@ -5,11 +5,9 @@ class Solution(object):
         :type stones: str
         :rtype: int
         """
+        jewel_set = set(jewels)
         count = 0
         for stone in stones:
-            for jewel in jewels:
-                if stone == jewel:
-                    count += 1
-                    break  # Stop checking once a match is found
+            if stone in jewel_set:
+                count += 1
         return count
-        
